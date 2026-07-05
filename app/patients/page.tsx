@@ -13,9 +13,26 @@ export default async function PatientsPage() {
   return (
     <main className="min-h-screen bg-gray-100 p-8">
 
-      <h1 className="text-4xl font-bold text-blue-700 mb-8">
-        Patients
-      </h1>
+      <div className="mb-8 flex items-center justify-between">
+
+  <h1 className="text-4xl font-bold text-blue-700">
+    Patients
+  </h1>
+
+  <a
+    href="/add-patient"
+    className="rounded-lg bg-blue-600 px-5 py-3 text-white hover:bg-blue-700"
+  >
+    + Add Patient
+  </a>
+
+</div>
+
+<input
+  type="text"
+  placeholder="🔍 Search Patient..."
+  className="mb-6 w-full rounded-lg border p-3"
+/>
 
       <div className="rounded-xl bg-white p-6 shadow">
 
