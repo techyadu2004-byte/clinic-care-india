@@ -1,6 +1,7 @@
-import { supabase } from "../../../lib/supabase";
+import { supabase } from "../../../../lib/supabase";
+import AssessmentForm from "../../../../components/AssessmentForm";
 
-export default async function PatientProfile({
+export default async function AssessmentPage({
   params,
 }: {
   params: Promise<{ id: string }>;
@@ -25,16 +26,17 @@ export default async function PatientProfile({
 
   return (
     <main className="min-h-screen bg-gray-100 p-8">
-      <div className="mx-auto max-w-4xl rounded-xl bg-white p-8 shadow-lg">
 
-        <h1 className="mb-8 text-3xl font-bold text-blue-700">
-          Patient Profile
+      <div className="mx-auto max-w-5xl rounded-xl bg-white p-8 shadow-lg">
+
+        <h1 className="mb-8 text-4xl font-bold text-blue-700">
+          Physiotherapy Assessment
         </h1>
 
-        <div className="grid grid-cols-2 gap-6">
+        <div className="mb-8 grid grid-cols-2 gap-6">
 
           <div>
-            <p className="font-semibold">Full Name</p>
+            <p className="font-semibold">Patient Name</p>
             <p>{patient.full_name}</p>
           </div>
 
@@ -49,19 +51,18 @@ export default async function PatientProfile({
           </div>
 
           <div>
-            <p className="font-semibold">Diagnosis</p>
-            <p>{patient.diagnosis}</p>
+            <p className="font-semibold">Visit Date</p>
+            <p>{new Date().toLocaleDateString()}</p>
           </div>
-          <a
-  href={`/patients/${patient.id}/assessment`}
-  className="mt-8 inline-block rounded-lg bg-purple-600 px-6 py-3 text-white hover:bg-purple-700"
->
-  🩺 Start Assessment
-</a>
 
         </div>
 
+        <hr className="mb-8" />
+
+        <AssessmentForm patientId={patient.id} />
+
       </div>
+
     </main>
   );
 }
