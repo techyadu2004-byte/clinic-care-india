@@ -1,26 +1,63 @@
+import Link from "next/link";
+
 export default function Sidebar() {
   return (
     <aside className="w-64 min-h-screen bg-blue-700 text-white p-6">
 
-      <h1 className="text-2xl font-bold mb-8">
+      <h1 className="mb-8 text-2xl font-bold">
         Clinic Care India
       </h1>
 
       <nav className="flex flex-col gap-4">
 
-        <a href="/dashboard">🏠 Dashboard</a>
+        <Link
+          href="/dashboard"
+          className="rounded p-2 hover:bg-blue-800"
+        >
+          🏠 Dashboard
+        </Link>
 
-        <a href="/patients">👤 Patients</a>
+        <Link
+          href="/patients"
+          className="rounded p-2 hover:bg-blue-800"
+        >
+          👤 Patients
+        </Link>
 
-        <a href="/appointments">📅 Appointments</a>
+        <Link
+          href="/appointments"
+          className="rounded p-2 hover:bg-blue-800"
+        >
+          📅 Appointments
+        </Link>
 
-        <a href="/staff">👨‍⚕️ Staff</a>
+        <Link
+          href="/staff"
+          className="rounded p-2 hover:bg-blue-800"
+        >
+          👨‍⚕️ Staff
+        </Link>
 
-        <a href="/billing">💳 Billing</a>
+        <Link
+          href="/billing"
+          className="rounded p-2 hover:bg-blue-800"
+        >
+          💳 Billing
+        </Link>
 
-        <a href="/reports">📊 Reports</a>
+        <Link
+          href="/reports"
+          className="rounded p-2 hover:bg-blue-800"
+        >
+          📊 Reports
+        </Link>
 
-        <a href="/settings">⚙️ Settings</a>
+        <Link
+          href="/settings"
+          className="rounded p-2 hover:bg-blue-800"
+        >
+          ⚙️ Settings
+        </Link>
 
       </nav>
 

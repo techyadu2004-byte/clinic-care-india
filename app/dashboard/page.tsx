@@ -1,6 +1,6 @@
 import Sidebar from "../../components/Sidebar";
 import DashboardCard from "../../components/DashboardCard";
-
+import Header from "../../components/Header";
 import { supabase } from "../../lib/supabase";
 
 export default async function Dashboard() {
@@ -12,7 +12,11 @@ export default async function Dashboard() {
 
       <Sidebar />
 
-      <main className="flex-1 bg-gray-100 p-8">
+      <main className="flex-1 bg-gray-100">
+
+  <Header />
+
+  <div className="p-8">
 
   <h1 className="text-4xl font-bold text-blue-700">
     Clinic Care India Dashboard
@@ -66,6 +70,8 @@ export default async function Dashboard() {
     </a>
 
   </div>
+
+</div>
 
 </main>
 

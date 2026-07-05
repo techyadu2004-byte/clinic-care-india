@@ -1,4 +1,5 @@
 import { supabase } from "../../../../lib/supabase";
+import EditPatientForm from "../../../../components/EditPatientForm";
 
 export default async function EditPatient({
   params,
@@ -25,45 +26,17 @@ export default async function EditPatient({
 
   return (
     <main className="min-h-screen bg-gray-100 p-8">
+
       <div className="mx-auto max-w-3xl rounded-xl bg-white p-8 shadow-lg">
 
         <h1 className="mb-8 text-3xl font-bold text-blue-700">
           Edit Patient
         </h1>
 
-        <div className="grid gap-5">
-
-          <input
-            className="rounded-lg border p-3"
-            value={patient.full_name}
-            readOnly
-          />
-
-          <input
-            className="rounded-lg border p-3"
-            value={patient.age}
-            readOnly
-          />
-
-          <input
-            className="rounded-lg border p-3"
-            value={patient.mobile}
-            readOnly
-          />
-
-          <textarea
-            className="rounded-lg border p-3"
-            value={patient.diagnosis}
-            readOnly
-          />
-
-          <button className="rounded-lg bg-blue-600 py-3 text-white">
-            Save Changes
-          </button>
-
-        </div>
+        <EditPatientForm patient={patient} />
 
       </div>
+
     </main>
   );
 }
